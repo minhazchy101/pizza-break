@@ -5,104 +5,107 @@ import logo from '/pizza-logo.svg';
 
 const Navbar = () => {
   const navItems = [
-    { name: 'Home', to: '/', type: 'route' },
+    { name: 'Home', to: 'hero', type: 'scroll' },
     { name: 'About Us', to: 'about', type: 'scroll' },
-    { name: 'Menu', to: 'menu', type: 'scroll' },
+    { name: 'Menu', to: '/menu', type: 'route' },
     { name: 'Contact', to: 'contact', type: 'scroll' },
   ];
 
-  return (
-    <header className="fixed top-0 left-0 w-full bg-primary z-50 shadow-md">
-      <div className="navbar max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-4 px-4">
-        
-        {/* Logo */}
-        <div className="flex-1 items-center gap-2">
+  const renderNavItem = (item) => {
+    const baseClasses =
+      'cursor-pointer px-3 py-2 font-medium transition-colors duration-200 text-accent hover:text-secondary';
+
+    if (item.type === 'route') {
+      return (
+        <li key={item.name}>
           <NavLink
-            to="/"
-            className="flex items-center gap-2 text-xl font-bold text-accent"
+            to={item.to}
+            className={({ isActive }) =>
+              `${baseClasses} ${isActive ? 'text-secondary' : ''}`
+            }
           >
+            {item.name}
+          </NavLink>
+        </li>
+      );
+    }
+
+    return (
+      <li key={item.name}>
+        <ScrollLink
+          to={item.to}
+          smooth={true}
+          duration={500}
+          spy={true}
+          offset={-70}
+          activeClass="text-secondary"
+          className={baseClasses}
+        >
+          {item.name}
+        </ScrollLink>
+      </li>
+    );
+  };
+
+  return (
+    <div className='bg-primary shadow-sm max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 fixed top-0 left-0 z-50 w-full'>
+    <div className="navbar ">
+      <div className="navbar-start">
+       
+
+        {/* Logo */}
+        <div className="flex items-center gap-2 text-xl font-bold text-accent ml-4">
+          <NavLink to="/" className="flex items-center gap-2">
             <span>Pizza</span>
-            <img src={logo} alt="Pizza Logo" className="w-10 h-10" />
+            <img src={logo} alt="Pizza Logo" className="h-10 w-10" />
             <span>Break</span>
           </NavLink>
         </div>
+      </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex flex-none ">
-          <ul className="menu menu-horizontal px-1 space-x-2">
-            {navItems.map((item) => (
-              <li key={item.to}>
-                {item.type === 'scroll' ? (
-                  <ScrollLink
-                    to={item.to}
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                    className="cursor-pointer text-accent hover:text-secondary transition-colors"
-                    activeClass="text-secondary"
-                  >
-                    {item.name}
-                  </ScrollLink>
-                ) : (
-                  <NavLink
-                    to={item.to}
-                    className="text-accent hover:text-secondary transition-colors"
-                  >
-                    {item.name}
-                  </NavLink>
-                )}
-              </li>
-            ))}
-          </ul>
+    
+      <div className="navbar-end ">
+        <div className='hidden lg:flex'>
+
+        <ul className="menu menu-horizontal px-1 space-x-2">
+          {navItems.map(renderNavItem)}
+        </ul>
         </div>
 
-        {/* Mobile Dropdown */}
-       <div className="dropdown dropdown-end md:hidden">
-  <div tabIndex={0} role="button" className="btn btn-outline text-accent btn-secondary ">
-    <svg
-      className="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </div>
-  <ul
-    tabIndex={0}
-    className="menu dropdown-content mt-5 z-[1] p-2 shadow bg-primary rounded-box w-52 "
-  >
-    {navItems.map((item) => (
-      <li key={item.to}>
-        {item.type === 'scroll' ? (
-          <ScrollLink
-            to={item.to}
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="cursor-pointer text-accent hover:text-secondary transition-colors"
-            activeClass="text-secondary"
-          >
-            {item.name}
-          </ScrollLink>
-        ) : (
-          <NavLink
-            to={item.to}
-            className="text-accent hover:text-secondary transition-colors"
-          >
-            {item.name}
-          </NavLink>
-        )}
-      </li>
-    ))}
-  </ul>
-</div>
 
+ {/* Mobile Dropdown */}
+        <div className="dropdown">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-secondary text-accent border-accent btn-outline lg:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-5 z-[1] w-52 rounded-box bg-primary p-2 shadow right-1"
+          >
+            {navItems.map(renderNavItem)}
+          </ul>
+        </div>
       </div>
-    </header>
+    </div>
+
+    </div>
   );
 };
 

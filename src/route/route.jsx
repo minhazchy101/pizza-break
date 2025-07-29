@@ -3,16 +3,13 @@ import {
  
 } from "react-router";
 import App from "../App";
-import Menu from "../page/Menu";
+import Home from "../page/Home";
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App> 
+    Component : Home ,
   },
-  {
-    path : 'menu' ,
-    Component : Menu
-  }
+ 
 ]);
