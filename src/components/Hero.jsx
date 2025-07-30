@@ -12,7 +12,7 @@ const Hero = () => {
       className="bg-primary scroll-mt-[100px] py-16"
     >
          <div
-  className="hero min-h-[95vh]"
+  className="hero min-h-[75vh]"
   style={{
     backgroundImage: `url(${bgImage})` ,
     backgroundSize: 'cover',
@@ -28,6 +28,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -80 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            
           >
         Pizza Break
           </motion.h1>

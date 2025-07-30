@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <section
       id="about"
-      className="bg-primary scroll-mt-[100px] py-16"
+      className="bg-primary scroll-mt-[100px] py-16 min-h-[70vh]"
     >
       <Container>
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
@@ -17,7 +17,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <h2 className="text-4xl font-extrabold text-accent mb-4">
               About <span className="text-secondary">Pizza Break</span>
@@ -38,16 +38,16 @@ const AboutUs = () => {
 
           {/* Image Section */}
           <motion.div
-            className="md:w-1/2"
+            className="md:w-1/2 overflow-hidden rounded-xl "
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <img
               src={aboutImage}
               alt="About Pizza Break"
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              className=" shadow-lg w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </motion.div>
         </div>
