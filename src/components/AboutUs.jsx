@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <section
       id="about"
-      className="bg-primary scroll-mt-[100px] py-16 min-h-[70vh]"
+      className="bg-primary scroll-mt-[100px] py-10 min-h-[70vh]"
     >
       <Container>
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">

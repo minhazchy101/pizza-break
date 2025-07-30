@@ -49,7 +49,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='bg-primary shadow-sm max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 fixed top-0 left-0 z-50 w-full'>
+    <div className='bg-primary shadow-sm max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 fixed top-0 left-0 z-50 w-full  border-2  border-b-secondary '>
     <div className="navbar ">
       <div className="navbar-start">
        

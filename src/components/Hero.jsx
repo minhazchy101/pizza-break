@@ -9,10 +9,10 @@ const Hero = () => {
         <>
         <section
       id="hero"
-      className="bg-primary scroll-mt-[100px] py-16"
+      className="bg-primary scroll-mt-[100px] py-10"
     >
          <div
-  className="hero min-h-[75vh]"
+  className="hero min-h-[85vh]"
   style={{
     backgroundImage: `url(${bgImage})` ,
     backgroundSize: 'cover',

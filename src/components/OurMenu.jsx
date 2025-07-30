@@ -2,12 +2,13 @@ import React from 'react';
 import Container from '../reusable/Container';
 import { motion } from 'framer-motion';
 import pizza from '../assets/pizza.jpg'
+import { Link } from 'react-router';
 
 const OurMenu = () => {
     return (
         <section
       id="ourMenu"
-      className="bg-primary scroll-mt-[100px] py-16 min-h-[70vh]"
+      className="bg-primary scroll-mt-[100px] py-10 min-h-[75vh]"
     >
 
         <Container>
@@ -37,7 +38,7 @@ const OurMenu = () => {
                 </div>
 
                {/* image section */}
-<div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+     <div className="mt-12 flex justify-around flex-col-reverse md:flex-row gap-6">
   <motion.div
       
       className="overflow-hidden rounded-xl shadow-lg"
@@ -67,9 +68,11 @@ const OurMenu = () => {
         className="w-[576px] h-[356px] object-cover hover:scale-105 transition-transform duration-500"
       />
     </motion.div>
-</div>
+           </div>
 
-            
+            <div className='text-center mt-8'>
+                <Link to='/menu' className='btn btn-secondary text-accent btn-outline py-4 px-8'>Menu</Link>
+            </div>
         </Container>
 
 
