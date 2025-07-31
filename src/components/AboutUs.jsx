@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import aboutImage from '../assets/pizza.jpg';
+import aboutImage from '../assets/us.jpg';
 import Container from '../reusable/Container';
 
 const AboutUs = () => {
   return (
     <section
       id="about"
-      className="bg-primary scroll-mt-[100px] py-10 min-h-[70vh]"
+      className="bg-primary scroll-mt-[100px] py-10 min-h-[80vh]"
     >
       <Container>
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
@@ -38,7 +38,7 @@ const AboutUs = () => {
 
           {/* Image Section */}
           <motion.div
-            className="md:w-1/2 overflow-hidden rounded-xl "
+            className="md:w-1/2 overflow-hidden rounded-xl min-h-screen border border-amber-200"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -47,7 +47,7 @@ const AboutUs = () => {
             <img
               src={aboutImage}
               alt="About Pizza Break"
-              className=" shadow-lg w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              className="rounded-xl shadow-lg w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </motion.div>
         </div>

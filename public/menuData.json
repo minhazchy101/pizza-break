@@ -1,0 +1,78 @@
+{
+  "pizza": [
+    {
+      "name": "Margherita (veg)",
+      "prices": { "small": 170, "medium": 235, "large": 295 },
+       "photo" : "/assets/pizza.jpg"
+     
+    },
+    {
+      "name": "Texas BBQ",
+      "prices": { "small": 240, "medium": 330, "large": 395 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Smokey Chicken",
+      "prices": { "small": 250, "medium": 350, "large": 425 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Chicken Supreme",
+      "prices": { "small": 295, "medium": 385, "large": 495 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Mexican Hot (Spicy)",
+      "prices": { "small": 300, "medium": 395, "large": 525 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Tandoori Delight",
+      "prices": { "small": 355, "medium": 465, "large": 585 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Pizza Italiano",
+      "prices": { "small": 375, "medium": 485, "large": 590 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Chicken Saucy Tsunami",
+      "prices": { "small": 380, "medium": 495, "large": 595 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Alfredo",
+      "prices": { "small": 450, "medium": 575, "large": 685 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Twin Core",
+      "prices": { "medium": 595, "large": 750 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Four Seasons",
+      "prices": { "medium": 650, "large": 795 },
+       "photo" : "/assets/pizza.jpg"
+    },
+    {
+      "name": "Ultimate Beef Pepperoni",
+      "prices": { "medium": 750, "large": 850 },
+       "photo" : "/assets/pizza.jpg"
+    }
+  ],
+  "add_on": [
+    { "name": "Cheese", "prices": { "small": 120, "medium": 170, "large": 220 } },
+    { "name": "Chicken", "prices": { "small": 100, "medium": 150, "large": 200 } },
+    { "name": "Mushroom", "prices": { "small": 70, "medium": 100, "large": 130 } },
+    { "name": "Sausage", "prices": { "small": 100, "medium": 150, "large": 200 } },
+    { "name": "Chilli Sauce", "price": 20 },
+    { "name": "Garlic Mayonnaise", "price": 25 },
+    { "name": "French Fries", "price": 150 }
+  ],
+  "pasta": [
+    { "name": "Pasta Break", "price": 265 },
+    { "name": "Tandoori Pasta", "price": 295 }
+  ]
+}

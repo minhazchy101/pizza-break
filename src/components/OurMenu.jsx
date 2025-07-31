@@ -1,7 +1,8 @@
 import React from 'react';
 import Container from '../reusable/Container';
 import { motion } from 'framer-motion';
-import pizza from '../assets/pizza.jpg'
+import menu1 from '../assets/menu1.jpg'
+import menu2 from '../assets/menu-hero.jpg'
 import { Link } from 'react-router';
 
 const OurMenu = () => {
@@ -48,7 +49,7 @@ const OurMenu = () => {
       viewport={{ once: true }}
     >
       <img
-        src={pizza}
+        src={menu1}
         alt={`Pizza `}
         className="w-[576px] h-[356px] object-cover hover:scale-105 transition-transform duration-500"
       />
@@ -63,7 +64,7 @@ const OurMenu = () => {
       viewport={{ once: true }}
     >
       <img
-        src={pizza}
+        src={menu2}
         alt={`Pizza `}
         className="w-[576px] h-[356px] object-cover hover:scale-105 transition-transform duration-500"
       />
