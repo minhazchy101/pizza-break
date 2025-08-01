@@ -9,7 +9,7 @@ const Navbar = () => {
     { name: 'About Us', to: 'about', type: 'scroll' },
     { name: 'Menu', to: 'ourMenu', type: 'scroll' },
     // { name: 'Menu', to: '/menu', type: 'route' },
-    { name: 'Contact', to: 'contact', type: 'scroll' },
+    // { name: 'Contact', to: 'contact', type: 'scroll' },
   ];
 
   const renderNavItem = (item) => {

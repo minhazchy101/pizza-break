@@ -1,78 +1,146 @@
 {
   "pizza": [
     {
+      "id": 1,
       "name": "Margherita (veg)",
+      "description": "A timeless classic with fresh tomatoes and mozzarella. Perfect for those who love simplicity.",
       "prices": { "small": 170, "medium": 235, "large": 295 },
-       "photo" : "/assets/pizza.jpg"
-     
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 2,
       "name": "Texas BBQ",
+      "description": "Bold BBQ flavor with juicy chicken chunks. A smoky southern treat for meat lovers.",
       "prices": { "small": 240, "medium": 330, "large": 395 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 3,
       "name": "Smokey Chicken",
+      "description": "Smoked chicken blended with peppers and cheese. A rich and savory indulgence.",
       "prices": { "small": 250, "medium": 350, "large": 425 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 4,
       "name": "Chicken Supreme",
+      "description": "Loaded with premium chicken and veggies. A flavorful balance in every bite.",
       "prices": { "small": 295, "medium": 385, "large": 495 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 5,
       "name": "Mexican Hot (Spicy)",
+      "description": "Spicy peppers and herbs bring fiery flavor. Ideal for fans of bold heat and zest.",
       "prices": { "small": 300, "medium": 395, "large": 525 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 6,
       "name": "Tandoori Delight",
+      "description": "Rich tandoori chicken with Indian spices. A fusion of classic and exotic taste.",
       "prices": { "small": 355, "medium": 465, "large": 585 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 7,
       "name": "Pizza Italiano",
+      "description": "Authentic Italian flavors with herbs and olives. A delicious Mediterranean experience.",
       "prices": { "small": 375, "medium": 485, "large": 590 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 8,
       "name": "Chicken Saucy Tsunami",
+      "description": "Creamy sauces flow over tender chicken bites. Every slice is a flavor explosion.",
       "prices": { "small": 380, "medium": 495, "large": 595 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 9,
       "name": "Alfredo",
+      "description": "White sauce lovers' dream with cheese and veggies. Smooth, rich, and oh-so-creamy.",
       "prices": { "small": 450, "medium": 575, "large": 685 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 10,
       "name": "Twin Core",
+      "description": "A dynamic duo of two flavor cores. One bite, two thrilling taste profiles.",
       "prices": { "medium": 595, "large": 750 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 11,
       "name": "Four Seasons",
+      "description": "A quadrant of four unique toppings. Experience all seasons in one pizza.",
       "prices": { "medium": 650, "large": 795 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     },
     {
+      "id": 12,
       "name": "Ultimate Beef Pepperoni",
+      "description": "Premium beef pepperoni with rich mozzarella. For true carnivores and cheese fans.",
       "prices": { "medium": 750, "large": 850 },
-       "photo" : "/assets/pizza.jpg"
+      "photo": "../src/assets/pizza.jpg"
     }
   ],
   "add_on": [
-    { "name": "Cheese", "prices": { "small": 120, "medium": 170, "large": 220 } },
-    { "name": "Chicken", "prices": { "small": 100, "medium": 150, "large": 200 } },
-    { "name": "Mushroom", "prices": { "small": 70, "medium": 100, "large": 130 } },
-    { "name": "Sausage", "prices": { "small": 100, "medium": 150, "large": 200 } },
-    { "name": "Chilli Sauce", "price": 20 },
-    { "name": "Garlic Mayonnaise", "price": 25 },
-    { "name": "French Fries", "price": 150 }
+    {
+      "id": 1,
+      "name": "Cheese",
+      "description": "Add extra cheesy goodness to any dish. Melts perfectly with every bite.",
+      "prices": { "small": 120, "medium": 170, "large": 220 }
+    },
+    {
+      "id": 2,
+      "name": "Chicken",
+      "description": "Tender chicken chunks full of flavor. A protein-packed topping upgrade.",
+      "prices": { "small": 100, "medium": 150, "large": 200 }
+    },
+    {
+      "id": 3,
+      "name": "Mushroom",
+      "description": "Earthy mushrooms for a savory twist. Pairs great with cheese and herbs.",
+      "prices": { "small": 70, "medium": 100, "large": 130 }
+    },
+    {
+      "id": 4,
+      "name": "Sausage",
+      "description": "Juicy sausage slices with a meaty bite. Adds boldness to every pizza.",
+      "prices": { "small": 100, "medium": 150, "large": 200 }
+    },
+    {
+      "id": 5,
+      "name": "Chilli Sauce",
+      "description": "A fiery sauce that kicks up the heat. Drizzle on for spicy satisfaction.",
+      "price": 20
+    },
+    {
+      "id": 6,
+      "name": "Garlic Mayonnaise",
+      "description": "Creamy mayo with a garlicky punch. The perfect dip for fries or crusts.",
+      "price": 25
+    },
+    {
+      "id": 7,
+      "name": "French Fries",
+      "description": "Golden, crispy fries made to order. A crunchy and satisfying side snack.",
+      "price": 150
+    }
   ],
   "pasta": [
-    { "name": "Pasta Break", "price": 265 },
-    { "name": "Tandoori Pasta", "price": 295 }
+    {
+      "id": 1,
+      "name": "Pasta Break",
+      "description": "Creamy and delicious pasta bowl. Perfect for a quick savory break.",
+      "price": 265
+    },
+    {
+      "id": 2,
+      "name": "Tandoori Pasta",
+      "description": "A spicy fusion of tandoori flavors and pasta. Bold, zesty, and filling.",
+      "price": 295
+    }
   ]
 }

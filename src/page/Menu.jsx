@@ -1,62 +1,77 @@
- import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '/pizza-logo.svg';
 import Container from '../reusable/Container';
 import { Link } from 'react-router';
-import Card from 'react-ui-cards';
-
+import Pizza from '../components/menu/Pizza';
+import Pasta from '../components/menu/pasta';
+import Add from '../components/menu/Add';
 
 const Menu = () => {
-  const [menuData, setMenuData] = useState([]);
+  const [menuData, setMenuData] = useState({});
 
   useEffect(() => {
     fetch('/menuData.json')
       .then((res) => {
-        if (!res.ok) {
-          throw new Error('Failed to fetch');
-        }
+        if (!res.ok) throw new Error('Failed to fetch');
         return res.json();
       })
-      .then((jsonData) => {
-        setMenuData(jsonData.pizza || []);
-      })
-      .catch((error) => {
-        console.error('Error fetching data: ', error);
-      });
+      .then((jsonData) => setMenuData(jsonData || {}))
+      .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
-  console.log('menuData--> ' , menuData)
+  const pizzaMenu = menuData.pizza || [];
+  const pastaMenu = menuData.pasta || [];
+  const addOnMenu = menuData.add_on || [];
+
+  console.log(pastaMenu)
+  // ✅ Reusable item card component
+  
 
   return (
-    <div className='bg-primary min-h-screen'>
+    <div className='bg-primary min-h-screen text-accent py-8'>
       <Container>
-        {/* Logo */}
-        <div className='max-w-lg mx-auto border border-accent flex justify-center'>
-          <div className='flex items-center gap-2 text-3xl font-bold text-accent ml-4 py-4 border border-amber-200'>
-            <Link to='/' className='flex items-center gap-2'>
-              <span>Pizza</span>
-              <img src={logo} alt='Pizza Logo' className='h-10 w-10' />
-              <span>Break</span>
-            </Link>
-          </div>
+        {/* Logo & Heading */}
+        <div className='flex flex-col items-center mb-10'>
+          <Link to='/' className='flex items-center gap-3 text-4xl font-extrabold text-secondary'>
+            <span>Pizza</span>
+            <img src={logo} alt='Pizza Logo' className='h-10 w-10' />
+            <span>Break</span>
+          </Link>
+          <p className='text-xl text-accent mt-2'>Crafted with love & flavor</p>
         </div>
 
-        <h1 className='text-2xl text-center text-accent m-4 py-4'>Our Menu</h1>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
+          {/* Pizzas */}
+          <div>
+            <div className="grid space-y-12 grid-cols-1">
+            <h2 className='text-3xl text-center font-semibold mb-8 text-accent tracking-wide'>Our Signature Pizzas</h2>
+              <Pizza pizzaMenu={pizzaMenu}></Pizza>
 
-        {/* Menu Cards */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
-          {menuData?.map((pizza, index) => (
-            // <Card
-            //   key={index}
-            //   float
-            //   header={pizza.photo ? pizza.photo : '/assets/default-pizza.jpg'}
-            //   avatar="/pizza-logo.svg"
-            //   title={pizza.name}
-            //   description={`Small: ₹${pizza.prices.small ?? 'N/A'}, Medium: ₹${pizza.prices.medium ?? 'N/A'}, Large: ₹${pizza.prices.large ?? 'N/A'}`}
-            // />
-            <>
-            <p  key={index} className='text-accent'>{pizza.name}</p>
-            </>
-          ))}
+            </div>
+             
+          </div>
+
+
+          {/* Pasta + Add Ons */}
+          <div className='space-y-12 '>
+            {/* Pasta */}
+            <div>
+              <h2 className='text-3xl text-center font-semibold mb-8 text-accent tracking-wide'>Pasta</h2>
+              <div className='grid grid-cols-1 gap-8'>
+                
+                <Pasta pastaMenu={pastaMenu}></Pasta>
+              </div>
+            </div>
+
+            {/* Add Ons */}
+            <div>
+              <h2 className='text-3xl text-center font-semibold mb-8 text-accent tracking-wide'>Add On</h2>
+              <div className='grid grid-cols-1 gap-8'>
+                
+                <Add addOnMenu={addOnMenu}></Add>
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </div>

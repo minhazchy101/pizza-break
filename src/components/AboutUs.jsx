@@ -38,7 +38,7 @@ const AboutUs = () => {
 
           {/* Image Section */}
           <motion.div
-            className="md:w-1/2 overflow-hidden rounded-xl min-h-screen border border-amber-200"
+            className="md:w-1/2 overflow-hidden rounded-xl min-h-screen"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
