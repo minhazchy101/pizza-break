@@ -4,7 +4,7 @@ import {
 } from "react-router";
 import App from "../App";
 import Home from "../page/Home";
-import Menu from "../page/Menu";
+import Menu from "../page/menu/Menu";
 
 
 export const router = createBrowserRouter([

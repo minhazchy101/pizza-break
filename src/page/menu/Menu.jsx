@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import logo from '/pizza-logo.svg';
-import Container from '../reusable/Container';
+import Container from '../../reusable/Container';
 import { Link } from 'react-router';
-import Pizza from '../components/menu/Pizza';
-import Pasta from '../components/menu/pasta';
-import Add from '../components/menu/Add';
+import Card from './Card';
 
 const Menu = () => {
   const [menuData, setMenuData] = useState({});
@@ -19,11 +17,9 @@ const Menu = () => {
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
-  const pizzaMenu = menuData.pizza || [];
-  const pastaMenu = menuData.pasta || [];
-  const addOnMenu = menuData.add_on || [];
+ 
 
-  console.log(pastaMenu)
+  // console.log(menuData)
   // ✅ Reusable item card component
   
 
@@ -45,8 +41,8 @@ const Menu = () => {
           <div>
             <div className="grid space-y-12 grid-cols-1">
             <h2 className='text-3xl text-center font-semibold mb-8 text-accent tracking-wide'>Our Signature Pizzas</h2>
-              <Pizza pizzaMenu={pizzaMenu}></Pizza>
-
+              
+              <Card menuData={menuData?.pizza}></Card>
             </div>
              
           </div>
@@ -59,7 +55,8 @@ const Menu = () => {
               <h2 className='text-3xl text-center font-semibold mb-8 text-accent tracking-wide'>Pasta</h2>
               <div className='grid grid-cols-1 gap-8'>
                 
-                <Pasta pastaMenu={pastaMenu}></Pasta>
+                <Card menuData={menuData?.pasta}></Card>
+
               </div>
             </div>
 
@@ -68,7 +65,8 @@ const Menu = () => {
               <h2 className='text-3xl text-center font-semibold mb-8 text-accent tracking-wide'>Add On</h2>
               <div className='grid grid-cols-1 gap-8'>
                 
-                <Add addOnMenu={addOnMenu}></Add>
+               <Card menuData={menuData?.add_on}></Card>
+
               </div>
             </div>
           </div>
